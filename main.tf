@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    organization = "froste"
+
+    workspaces {
+      #name = "majortelevisioneventcom-prod"
+      prefix = "majortelevisioneventcom-"
+    }
+  }
+}
+
 // Configure the Google Cloud provider
 provider "google" {
  credentials = "${file("./prod/majortelevisioneventcom - Prod-104645181c60.json")}"
